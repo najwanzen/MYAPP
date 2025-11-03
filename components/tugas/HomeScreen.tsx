@@ -10,20 +10,52 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const notes = [
+const notes: Note[] = [
   {
     id: 1,
-    image: require("@/assets/images/logo.png"),
+    image: require("@/assets/images/pict-1.png"),
     title: "Belajar Mobile App",
     description: "Belajar Membuat Aplikasi mobile app",
     date: "29 Oktober 2025",
   },
   {
     id: 2,
-    image: require("@/assets/images/logo.png"),
+    image: require("@/assets/images/pict-2.png"),
     title: "Belajar backend",
     description: "Belajar membuat restful api",
     date: "30 Oktober 2025",
+  },
+  {
+    id: 3,
+    image: require("@/assets/images/pict-3.png"),
+    title: "Belajar Mobile App",
+    description: "Belajar Membuat Aplikasi mobile app",
+    date: "11 November 2025",
+  },
+  {
+    id: 4,
+    image: require("@/assets/images/pict-4.png"),
+    title: "Belajar backend",
+    description: "Belajar membuat restful api",
+    date: "17 November 2025",
+  },{
+    id: 5,
+    image: require("@/assets/images/pict-4.png"),
+    title: "Belajar backend",
+    description: "Belajar membuat restful api",
+    date: "17 November 2025",
+  },{
+    id: 6,
+    image: require("@/assets/images/pict-4.png"),
+    title: "Belajar backend",
+    description: "Belajar membuat restful api",
+    date: "17 November 2025",
+  },{
+    id: 7,
+    image: require("@/assets/images/pict-4.png"),
+    title: "Belajar backend",
+    description: "Belajar membuat restful api",
+    date: "17 November 2025",
   },
 
 ];
@@ -82,11 +114,18 @@ export default function HomeScreen() {
 
 const EmptyData = () => {
   return (
-    <View>
-      <Text>Data Kosong</Text>
+    <View style={styles.emptyContainer}>
+      <Image
+        style={{ width: 150, height: 150 }}
+        source={require("@/assets/images/emptyIcon.png")}
+      />
+      <Text style={styles.emptyTitle}>Add your first note</Text>
+      <Text style={styles.emptyDesc}>
+        Save your thoughts, tasks or inspiration
+      </Text>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -158,4 +197,19 @@ const styles = StyleSheet.create({
     fontSize: 13,
     marginTop: 15,
   },
+  emptyContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 8,
+  },
+  emptyTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginTop: 8,
+  },
+  emptyDesc: {
+    fontSize: 18,
+    color: "gray"
+  }
 });
